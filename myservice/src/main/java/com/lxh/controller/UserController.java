@@ -7,6 +7,8 @@ import com.lxh.result.ResultBody;
 import com.lxh.service.UserService;
 import com.xiaoleilu.hutool.log.Log;
 import com.xiaoleilu.hutool.log.LogFactory;
+
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
@@ -46,6 +48,7 @@ public class UserController {
      * 获取用户列表
      */
     @GetMapping(value = "", produces = "application/json;charset=UTF-8")
+    @RequiresPermissions("user:list")
     public String findAllUser(
             @RequestParam(value = "showCount", required = false, defaultValue = "10") Integer showCount,
             @RequestParam(value = "currentPage", required = false, defaultValue = "1") Integer currentPage) throws Exception {
@@ -71,6 +74,7 @@ public class UserController {
      * 删除用户
      */
     @DeleteMapping(value = "/{id}", produces = "application/json;charset=UTF-8")
+    @RequiresPermissions("user:del")
     public String deleteUserById(@PathVariable("id") Integer id) throws Exception {
         if (userService.deleteById(id)) {
             return ResultBody.success();
