@@ -2,6 +2,7 @@ package com.lxh.service;
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.plugins.Page;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
+import com.lxh.cache.CacheService;
 import com.lxh.core.exception.RmsException;
 import com.lxh.core.exception.RmsExceptionEnum;
 import com.lxh.db.mapper.UserMapper;
@@ -37,8 +38,9 @@ public class UserService extends ServiceImpl<UserMapper, User> {
 
     @Autowired
     private UserMapper userMapper;
-
-
+    
+    @Autowired
+    private CacheService cacheService;
 
     @Autowired
     private SqlSessionFactory factory;
@@ -107,6 +109,9 @@ public class UserService extends ServiceImpl<UserMapper, User> {
         userMapper.selectOneUser(paramsMap);
         return rmsUser;
 //        return cacheService.selectUserById(id);
+    }
+    public UserVo selectUserByAccout(String account) {
+        return cacheService.selectUserByAccout(account);
     }
 }
 

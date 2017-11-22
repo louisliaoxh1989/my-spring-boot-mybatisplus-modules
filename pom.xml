@@ -94,6 +94,16 @@
 			</dependency>
 			<dependency>
 				<groupId>com.lxh</groupId>
+				<artifactId>db-redis</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+						<dependency>
+				<groupId>com.lxh</groupId>
+				<artifactId>db-cache</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+			<dependency>
+				<groupId>com.lxh</groupId>
 				<artifactId>myservice</artifactId>
 				<version>0.0.1-SNAPSHOT</version>
 			</dependency>
