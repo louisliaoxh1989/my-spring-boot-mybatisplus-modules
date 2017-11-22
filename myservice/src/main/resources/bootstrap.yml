@@ -1,0 +1,15 @@
+# 如果是使用spring cloud的服务发现方式采用该配置，并删除掉application.yml中basis.connection及以后的配置
+
+#spring:
+#  cloud:
+#    config:
+#      name: data
+#      profile: dev
+#      discovery:
+#        enabled: true
+#        serviceId: config-server
+#
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://localhost:1111/eureka/
