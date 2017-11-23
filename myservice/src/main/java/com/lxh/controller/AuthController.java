@@ -46,6 +46,7 @@ public class AuthController {
 	        } else {
 	            token.setRememberMe(false);
 	        }
+	        
 	        //获取当前的Subject
 	        Subject currentSubject = SecurityUtils.getSubject();
 	        try {

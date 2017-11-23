@@ -28,6 +28,7 @@ public class UserVo implements Serializable{
 	private Integer id;
 	private String account;
 	private String password;
+	private String salt;
 	private String name;
 	private Integer sex;
 	private String birthday;
@@ -60,6 +61,14 @@ public class UserVo implements Serializable{
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public String getSalt() {
+		return salt;
+	}
+
+	public void setSalt(String salt) {
+		this.salt = salt;
 	}
 
 	public String getName() {

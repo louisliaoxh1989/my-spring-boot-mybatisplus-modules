@@ -41,6 +41,10 @@ public class User extends Model<User> {
 	@NotBlank(message = "密码不能为空")
 	@Size(min = 6, max = 20, message = "密码长度为6-20")
 	private String password;
+	
+	@Size(min = 6, max = 20, message = "加密盐6-20")
+	private String salt;
+	
     /**
      * 姓名
      */
@@ -108,6 +112,10 @@ public class User extends Model<User> {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public void setSalt(String salt) {
+		this.salt = salt;
 	}
 
 	public String getName() {

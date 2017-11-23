@@ -9,6 +9,7 @@ import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
+import org.apache.shiro.util.ByteSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
@@ -77,12 +78,20 @@ public class ShiroRealm extends AuthorizingRealm {
         // 获取用户的输入的账号.
         String account = (String) authenticationToken.getPrincipal();
         // 查询用户信息
-        // 实际项目中，这里可以根据实际情况做缓存，如果不做，Shiro自己也是有时间间隔机制，2分钟内不会重复执行该方法
-        UserVo rmsUser = cacheService.selectUserByAccout(account);
-
+        // principal实际项目中，这里可以根据实际情况做缓存，如果不做，Shiro自己也是有时间间隔机制，2分钟内不会重复执行该方法
+        UserVo rmsUser = userService.selectUserByAccout(account);
+        String salt = "eteokues";
+        if(rmsUser.getSalt()!=null)
+        	salt = rmsUser.getSalt();
         // 账号存在
         if (!BlankUtil.isBlank(rmsUser)) {
-           return new SimpleAuthenticationInfo(account, rmsUser.getPassword(), rmsUser.getName());
+        	 SimpleAuthenticationInfo authenticationInfo = new SimpleAuthenticationInfo(
+        			 account, //用户信息
+        			 rmsUser.getPassword(), //密码
+                     getName() //realm name
+             );
+             authenticationInfo.setCredentialsSalt(ByteSource.Util.bytes(salt)); //设置盐
+             return authenticationInfo;
         }
         return null;
     }
