@@ -32,11 +32,10 @@ public class AuthController {
 	    public String login() {
 	        return "进入登录页面";
 	    }
-
 	    /**
 	     * ajax登录请求
 	     */
-	    @PostMapping(value = "/login")
+	    @GetMapping(value = "/logindo")
 	    @ResponseBody
 	    public String submitLogin(@RequestParam(value = "account") String account,
 	                              @RequestParam(value = "password") String password,

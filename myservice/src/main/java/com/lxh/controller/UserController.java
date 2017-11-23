@@ -73,9 +73,9 @@ public class UserController {
     /**
      * 删除用户
      */
-    @DeleteMapping(value = "/{id}", produces = "application/json;charset=UTF-8")
+    @GetMapping(value = "/del/{id}", produces = "application/json;charset=UTF-8")
     @RequiresPermissions("user:del")
-    public String deleteUserById(@PathVariable("id") Integer id) throws Exception {
+    public String deleteUserById(@PathVariable("id") Integer id)  {
         if (userService.deleteById(id)) {
             return ResultBody.success();
         }
