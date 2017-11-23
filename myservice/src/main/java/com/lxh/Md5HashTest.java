@@ -1,7 +1,9 @@
 package com.lxh;
 
 import org.apache.shiro.crypto.hash.Md5Hash;
-
+/**
+* 密码md5生成测试类
+*/
 public class Md5HashTest {
 
 	public static void main(String[] args) {
