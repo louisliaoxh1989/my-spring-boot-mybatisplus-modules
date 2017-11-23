@@ -1,13 +1,19 @@
-# spring-boot-mybatisplus
-使用spring-boot mybatisplus shiro redis 的基础框架 使用多模块方式
+# spring-boot-mybatisplus-modules
 
+**使用spring-boot mybatisplus shiro redis 的基础框架 使用多模块方式**
+## 功能
+
+集成mybatisplus及分页
+集成Redis做数据的缓存
+集成shiro权限控制访问
+自定义404,500等异常处理页面
+自定义无权限页面(解决shiro配置setUnauthorizedUrl(403)无用的情况)
 ```
 运行:
 mvn package
 java -jar myservice/target/myservice-0.0.1-SNAPSHOT.jar
-
 使用get 访问 http://localhost:8888/logindo?account=412241262@qq.com&password=111111 进行登陆
-使用get方式 访问 http://localhost:8888/rms/user 查看所有用户
+使用get方式 访问 http://localhost:8888/rms/user?showCount=2&currentPage=1 查看所有用户<后面的参数可以不带>
 使用get方式 访问 http://localhost:8888/rms/user/del/1 就会跳到没有权限的提示页面
 ```
 
