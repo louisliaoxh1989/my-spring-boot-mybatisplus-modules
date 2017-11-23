@@ -3,9 +3,9 @@
 **使用spring-boot mybatisplus shiro redis 的基础框架 使用多模块方式**
 ## 功能
 ```
-集成mybatisplus及分页
+集成mybatisplus,mysql,分页
 集成Redis做数据的缓存
-集成shiro权限控制访问
+集成shiro认证(salt md5 散列2次md5(md5(""))),权限控制访问
 自定义404,500等异常处理页面
 自定义无权限页面(解决shiro配置setUnauthorizedUrl(403)无用的情况)
 ```
