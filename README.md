@@ -23,6 +23,6 @@ java -jar myservice/target/myservice-0.0.1-SNAPSHOT.jar
 
 
 
-模块db时使用mybatis的数据库独立模块，其他模块可以直接引用，可参考myservice模块。
+模块db是使用mybatis的数据库独立模块，其他模块可以直接引用，可参考myservice模块。
 
 
