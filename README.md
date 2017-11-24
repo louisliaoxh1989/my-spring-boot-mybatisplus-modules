@@ -53,3 +53,5 @@ java -jar myservice/target/myservice-0.0.1-SNAPSHOT.jar
 [Spring Boot 静态资源处理](http://blog.csdn.net/isea533/article/details/50412212)
 
 [spring-boot-oauth2](https://spring.io/guides/tutorials/spring-boot-oauth2/)
+
+[spring-boot-shiro-oauthclient-demo](https://github.com/zrk1000/spring-boot-shiro-oauthclient-demo)
