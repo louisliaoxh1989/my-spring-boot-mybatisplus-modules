@@ -22,6 +22,18 @@ java -jar myservice/target/myservice-0.0.1-SNAPSHOT.jar
 >>使用get方式 访问 http://localhost:8888/rms/user/del/1 就会跳到没有权限的提示页面
 
 
+### 国际化测试
+
+```
+访问 http://localhost:8888/langtest  # 第一次访问会根据浏览器设置的语言来显示
+访问 http://localhost:8888/langtest?lang=zh_CN #切换为中文
+再次访问 http://localhost:8888/langtest #可以发现已经为中文了
+访问 http://localhost:8888/langtest?lang=en_US #切换为英文
+访问 http://localhost:8888/changeLanauage?lang=zh # 设置为中文
+再次访问 http://localhost:8888/langtest #可以发现已经为中文了
+访问 http://localhost:8888/changeLanauage?lang=en # 设置为英文
+再次访问 http://localhost:8888/langtest #可以发现已经为英文了
+```
 
 模块db是使用mybatis的数据库独立模块，其他模块可以直接引用，可参考myservice模块。
 
