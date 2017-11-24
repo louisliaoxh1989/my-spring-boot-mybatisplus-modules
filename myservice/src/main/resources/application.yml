@@ -3,6 +3,10 @@ server:
 spring:
   application:
     name: bbbb-service
+  messages:
+    basename: i18n/messages
+    cache-seconds: 3600
+    encoding: UTF-8
 # ====================basis.connection====================
 basis.connection:
   url: jdbc:mysql://localhost:3306/cloud?useUnicode=true&characterEncoding=utf8
