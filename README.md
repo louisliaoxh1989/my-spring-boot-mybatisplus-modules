@@ -41,9 +41,14 @@ java -jar myservice/target/myservice-0.0.1-SNAPSHOT.jar
 
 # 参考
 
-```
-https://github.com/hendisantika/spring-boot-i18n
-https://github.com/xuezhijian/Spring-Demo-Repository/tree/master/shiroDemo
-```
 
+[国际化](https://github.com/hendisantika/spring-boot-i18n)
+
+[spring-boot国际化配置](https://github.com/zl736732419/spring-boot-i18n)
+
+[Spring-boot Shiro](https://github.com/xuezhijian/Spring-Demo-Repository/tree/master/shiroDemo)
+
+[springboot整合shiro-登录认证和权限管理](http://www.importnew.com/26055.html)
+
+[Spring Boot 静态资源处理](http://blog.csdn.net/isea533/article/details/50412212)
 
