@@ -51,11 +51,14 @@ public class MyWebAppConfigurer extends WebMvcConfigurerAdapter {
 		// registry.addInterceptor(new
 		// ErrorInterceptorController()).addPathPatterns("/**").excludePathPatterns("/static");
 		registry.addInterceptor(localeChangeInterceptor());
+		super.addInterceptors(registry);
+		
 	}
 
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
 		registry.addResourceHandler("/static/**").addResourceLocations("classpath:/static/");
+		super.addResourceHandlers(registry);
 		// addResourceHandler指的是对外暴露的访问路径,addResourceLocations指的是文件放置的目录，
 	}
 }

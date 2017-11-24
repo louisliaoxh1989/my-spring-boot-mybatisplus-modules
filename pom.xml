@@ -10,6 +10,7 @@
 	<modules>
 		<module>db</module>
 		<module>myservice</module>
+		<module>oauthclient</module>
 	</modules>
 
 	<parent>
@@ -97,7 +98,7 @@
 				<artifactId>db-redis</artifactId>
 				<version>0.0.1-SNAPSHOT</version>
 			</dependency>
-						<dependency>
+			<dependency>
 				<groupId>com.lxh</groupId>
 				<artifactId>db-cache</artifactId>
 				<version>0.0.1-SNAPSHOT</version>
@@ -105,6 +106,11 @@
 			<dependency>
 				<groupId>com.lxh</groupId>
 				<artifactId>myservice</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+			<dependency>
+				<groupId>com.lxh</groupId>
+				<artifactId>oauthclient</artifactId>
 				<version>0.0.1-SNAPSHOT</version>
 			</dependency>
 		</dependencies>
